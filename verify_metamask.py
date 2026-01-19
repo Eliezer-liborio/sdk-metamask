@@ -58,7 +58,7 @@ def verify_signature(address, signature, nonce):
 
 if __name__ == "__main__":
     try:
-        user_address = "0x4D24bA11D156c52768937fe64B904Ad12F7b5785"
+        user_address = ""
         logger.info(f"Iniciando verificação para: {user_address}")
         
         nonce = generate_nonce(user_address)
