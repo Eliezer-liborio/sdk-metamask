@@ -11,7 +11,7 @@ A versão atual do SDK introduz uma arquitetura robusta dividida entre Frontend 
 ### 1. Padrão Sign-In with Ethereum (EIP-4361)
 O sistema não utiliza mais mensagens de texto simples. A implementação adota o padrão SIWE, que estrutura a mensagem de assinatura incluindo o domínio da aplicação, a URI de origem, o identificador da rede (Chain ID) e o tempo de expiração. Isso impede que uma assinatura gerada para a aplicação "A" seja maliciosamente reutilizada na aplicação "B".
 
-### 2. Geração de Nonce Criptograficamente Seguro
+### 2. Geração de Nonce
 O método anterior, que baseava o nonce na contagem de transações da carteira (`get_transaction_count`), foi substituído. O uso de transações como nonce é vulnerável a *Replay Attacks*, pois o valor permanece estático até que uma nova transação on-chain ocorra. 
 A nova arquitetura gera um nonce aleatório, criptograficamente seguro e de uso único (One-Time Use) no backend, com um *Time-To-Live* (TTL) rigoroso. Após a verificação bem-sucedida, o nonce é imediatamente invalidado.
 
@@ -23,7 +23,7 @@ O processo de verificação foi encapsulado em uma API RESTful de alta performan
 - Validar a assinatura criptográfica (`personal_sign`) contra a chave pública derivada.
 - Validar as restrições de domínio, expiração e integridade do nonce.
 
-### 4. Frontend SPA Minimalista
+### 4. SPA
 A interface de usuário foi refatorada em uma Single Page Application (SPA) em HTML/JS puro, sem dependências externas complexas. Ela gerencia o ciclo de vida da conexão com o provedor injetado (`window.ethereum`), orquestra as chamadas à API e provê feedback visual contínuo do estado da autenticação.
 
 ## Estrutura do Projeto
