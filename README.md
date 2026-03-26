@@ -15,6 +15,8 @@ O sistema não utiliza mais mensagens de texto simples. A implementação adota 
 O método anterior, que baseava o nonce na contagem de transações da carteira (`get_transaction_count`), foi substituído. O uso de transações como nonce é vulnerável a *Replay Attacks*, pois o valor permanece estático até que uma nova transação on-chain ocorra. 
 A nova arquitetura gera um nonce aleatório, criptograficamente seguro e de uso único (One-Time Use) no backend, com um *Time-To-Live* (TTL) rigoroso. Após a verificação bem-sucedida, o nonce é imediatamente invalidado.
 
+> Para uma explicação aprofundada sobre os diferentes contextos de uso do nonce, incluindo um exemplo de Smart Contract em Solidity e um guia de testes com Remix IDE, consulte o documento [NONCE.md](./NONCE.md).
+
 ### 3. API Backend Integrada (FastAPI)
 O processo de verificação foi encapsulado em RESTful . O backend é responsável por:
 - Gerar e armazenar temporariamente nonces seguros.
@@ -35,6 +37,7 @@ sdk-metamask/
 │   └── .env.example         # Template de variáveis de ambiente
 ├── frontend/
 │   └── index.html           # Interface de usuário e integração Web3
+├── NONCE.md                 # Conceito de nonce, Smart Contract e guia Remix
 └── README.md                # Documentação técnica
 ```
 
