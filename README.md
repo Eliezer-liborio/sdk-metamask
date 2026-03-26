@@ -16,7 +16,7 @@ O método anterior, que baseava o nonce na contagem de transações da carteira 
 A nova arquitetura gera um nonce aleatório, criptograficamente seguro e de uso único (One-Time Use) no backend, com um *Time-To-Live* (TTL) rigoroso. Após a verificação bem-sucedida, o nonce é imediatamente invalidado.
 
 ### 3. API Backend Integrada (FastAPI)
-O processo de verificação foi encapsulado em uma API RESTful de alta performance construída com FastAPI. O backend é responsável por:
+O processo de verificação foi encapsulado em RESTful . O backend é responsável por:
 - Gerar e armazenar temporariamente nonces seguros.
 - Construir a mensagem padronizada SIWE.
 - Receber o payload assinado do frontend.
@@ -24,7 +24,7 @@ O processo de verificação foi encapsulado em uma API RESTful de alta performan
 - Validar as restrições de domínio, expiração e integridade do nonce.
 
 ### 4. SPA
-A interface de usuário foi refatorada em uma Single Page Application (SPA) em HTML/JS puro, sem dependências externas complexas. Ela gerencia o ciclo de vida da conexão com o provedor injetado (`window.ethereum`), orquestra as chamadas à API e provê feedback visual contínuo do estado da autenticação.
+A interface de usuário foi refatorada em uma Single Page Application (SPA) em HTML/JS puro, sem dependências externas complexas. Ela gerencia o ciclo de vida da conexão com o provedor injetado (`window.ethereum`), e orquestra as chamadas à API.
 
 ## Estrutura do Projeto
 
