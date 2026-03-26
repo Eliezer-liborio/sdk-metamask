@@ -28,9 +28,6 @@ A interface de usuário foi refatorada em uma Single Page Application (SPA) em H
 
 ## Estrutura do Projeto
 
-O repositório está organizado da seguinte forma:
-
-```text
 sdk-metamask/
 ├── backend/
 │   ├── main.py              # Aplicação FastAPI e lógica de validação SIWE
