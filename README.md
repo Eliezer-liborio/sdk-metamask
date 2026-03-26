@@ -4,7 +4,7 @@ Este repositório fornece uma implementação de referência completa para auten
 
 A arquitetura foi modernizada para adotar o padrão da indústria **EIP-4361 (Sign-In with Ethereum)**, mitigando vulnerabilidades comuns como *Replay Attacks* e *Phishing*.
 
-## Arquitetura e Melhorias Implementadas
+## Arquitetura 
 
 A versão atual do SDK introduz uma arquitetura robusta dividida entre Frontend e Backend, eliminando a necessidade de processos manuais e garantindo a segurança criptográfica em todas as etapas.
 
